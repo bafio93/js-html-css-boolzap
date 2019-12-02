@@ -1,3 +1,13 @@
+$(document).ready(function() {
+    $(".container-right input").change(function() {
+        var testo = $(".container-right input").val();
+        $(".message-container").append("<div class='message user'></div>");
+        $(".message-container div:last-child").text(testo);
+        // alert(testo);
+
+    })
+})
+
 // $(document).ready(function(){
 //     //Immetto le celle nel mio container: lo devo fare per 64 volte! -> Ciclo for.
 //     for (var i = 0; i < 64; i++) {

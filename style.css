@@ -203,10 +203,15 @@ body {
 .message.user {
     float: right;
     background-color: rgb(214,248,188);
+    clear: both;
 }
 
-.message.user::after {
-    clear: both;
-    display: table;
+.message-container::after {
     content: "";
+    display: table;
+    clear: both;
+}
+
+.message.template {
+    display: none;
 }
