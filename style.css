@@ -1,0 +1,58 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Indie Flower', cursive;
+}
+
+body {
+    background-color: black;
+}
+
+.container {
+    width: 80vh;
+    height: 80vh;
+    margin: 10vh auto 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.quadrato {
+    width: 10vh;
+    height: 10vh;
+    border: 1px solid ivory;
+    animation-name: border-color;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+}
+
+.quadrato:hover {
+    border: 3px solid;
+}
+
+.rosso {
+    background-color: ivory;
+}
+
+.blu {
+    background-color: teal;
+    animation-name: tile-color;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes border-color {
+    0% {border-color: chartreuse}
+    25% {border-color: crimson}
+    50% {border-color: darkorange}
+    75% {border-color: aqua}
+    100% {border-color: chartreuse}
+}
+
+@keyframes tile-color {
+    0% {background-color: chartreuse}
+    25% {background-color: crimson}
+    50% {background-color: darkorange}
+    75% {background-color: aqua}
+    100% {background-color: chartreuse}
+}
