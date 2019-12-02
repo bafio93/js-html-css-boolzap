@@ -5,21 +5,14 @@
     font-family: 'Lato', sans-serif;
 }
 
-.container {
-    height: 95vh;
-    width: 80vw;
-    z-index: 2;
-    background-color: rgb(234,234,234);
-    position: relative;
-    margin: auto;
-}
+/* Istruzioni per stilare i container */
 
 body {
     position: relative;
     padding-top: calc(5vh / 2);
 }
 
-.upper_strip {
+.upper-strip {
     background-color: rgb(53,134,117);
     height: 15vh;
     width: 100vw;
@@ -28,11 +21,42 @@ body {
     top: 0;
 }
 
-.lower_strip {
+.lower-strip {
     background-color: rgb(210,212,201);
     height: 85vh;
     width: 100vw;
     z-index: 1;
     position: absolute;
     top: 15vh;
+}
+
+.container {
+    height: 95vh;
+    width: 80vw;
+    z-index: 2;
+    background-color: rgb(234,234,234);
+    position: relative;
+    margin: auto;
+    display: flex;
+}
+
+.container > * {
+    border: 1px solid cyan;
+}
+
+.container-left {
+    width: 35%;
+}
+
+.container-right {
+    width: 65%;
+}
+
+/* Istruzioni per stilare il container di sinistra */
+
+.container-left > .left {
+    width: 100%;
+    height: 50px;
+    background-color: rgb(142,218,252);
+    border: 1px solid crimson;
 }
