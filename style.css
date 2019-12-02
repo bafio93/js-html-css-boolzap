@@ -2,57 +2,37 @@
     box-sizing: border-box;
     padding: 0;
     margin: 0;
-    font-family: 'Indie Flower', cursive;
-}
-
-body {
-    background-color: black;
+    font-family: 'Lato', sans-serif;
 }
 
 .container {
-    width: 80vh;
-    height: 80vh;
-    margin: 10vh auto 0;
-    display: flex;
-    flex-wrap: wrap;
+    height: 95vh;
+    width: 80vw;
+    z-index: 2;
+    background-color: rgb(234,234,234);
+    position: relative;
+    margin: auto;
 }
 
-.quadrato {
-    width: 10vh;
-    height: 10vh;
-    border: 1px solid ivory;
-    animation-name: border-color;
-    animation-duration: 10s;
-    animation-iteration-count: infinite;
+body {
+    position: relative;
+    padding-top: calc(5vh / 2);
 }
 
-.quadrato:hover {
-    border: 3px solid;
+.upper_strip {
+    background-color: rgb(53,134,117);
+    height: 15vh;
+    width: 100vw;
+    z-index: 1;
+    position: absolute;
+    top: 0;
 }
 
-.rosso {
-    background-color: ivory;
-}
-
-.blu {
-    background-color: teal;
-    animation-name: tile-color;
-    animation-duration: 10s;
-    animation-iteration-count: infinite;
-}
-
-@keyframes border-color {
-    0% {border-color: chartreuse}
-    25% {border-color: crimson}
-    50% {border-color: darkorange}
-    75% {border-color: aqua}
-    100% {border-color: chartreuse}
-}
-
-@keyframes tile-color {
-    0% {background-color: chartreuse}
-    25% {background-color: crimson}
-    50% {background-color: darkorange}
-    75% {background-color: aqua}
-    100% {background-color: chartreuse}
+.lower_strip {
+    background-color: rgb(210,212,201);
+    height: 85vh;
+    width: 100vw;
+    z-index: 1;
+    position: absolute;
+    top: 15vh;
 }
