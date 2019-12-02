@@ -63,7 +63,6 @@ body {
 .container-left .row {
     width: 100%;
     height: 50px;
-    background-color: rgb(142,218,252);
     border: 1px solid crimson;
 }
 
@@ -93,19 +92,96 @@ body {
     line-height: 50px;
 }
 
-.container-left .row:hover {
-    background-color: rgb(233,235,234);
-}
-
 /* Stilare le icone */
 
-.container-left .row-left i {
+.row-left i {
     color: rgb(177,177,177);
     font-size: 30px;
     line-height: 50px;
 }
 
-.container-left .row-right i {
+.row-right i {
     color: rgb(177,177,177);
     padding: 0 5px;
+}
+
+/* Stilare le singole sezioni */
+
+.container-left .row.grey {
+    background-color: rgb(233,235,234);
+}
+
+.container-left .row.blue {
+    background-color: rgb(142,218,252);
+}
+
+.container-left .row.searchbar .row-middle {
+    width: calc(100% - 50px);
+    padding: 5px;
+}
+
+.container-left .row.searchbar .row-middle input {
+    width: 100%;
+    height: 100%;
+}
+
+.container-left .row.user:hover {
+    background-color: rgb(233,235,234);
+}
+
+/* Istruzioni per stilare il container di destra */
+
+.container-right .row {
+    width: 100%;
+    height: 50px;
+    border: 1px solid crimson;
+}
+
+.container-right .row .row-left {
+    border: 1px solid gold;
+    width: 50px;
+    height: 100%;
+    float: left;
+    line-height: 50px;
+    text-align: center;
+}
+
+.container-right .row .row-middle {
+    border: 1px solid gold;
+    width: calc(100% - 150px);
+    height: 100%;
+    float: left;
+    text-align: left;
+}
+
+.container-right .row .row-right {
+    border: 1px solid gold;
+    width: 100px;
+    height: 100%;
+    float: left;
+    text-align: right;
+    line-height: 50px;
+}
+
+.container-right .row.grey {
+    background-color: rgb(233,235,234);
+}
+
+/* Stilare il contenitore centrale */
+
+.message-container {
+    height: calc(100% - 100px);
+    width: 100%;
+    background-image: url(https://img.freepik.com/free-vector/seamless-pattern-petals-gray-background_53876-61842.jpg?size=338&ext=jpg);
+}
+
+/* Stilare l'input inferiore */
+
+.container-right .row:last-child .row-middle {
+    padding: 5px;
+}
+
+.grey input {
+    width: 100%;
+    height: 100%;
 }
