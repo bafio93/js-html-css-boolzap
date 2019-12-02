@@ -3,10 +3,12 @@ $(document).ready(function() {
         var testo = $(".container-right input").val();
         $(".message-container").append("<div class='message user'></div>");
         $(".message-container div:last-child").text(testo);
-        // alert(testo);
-
+        var clock = setTimeout(function(){
+            $(".message-container").append("<div class='message machine'>:)</div>")
+        }, 1000)
     })
 })
+
 
 // $(document).ready(function(){
 //     //Immetto le celle nel mio container: lo devo fare per 64 volte! -> Ciclo for.
