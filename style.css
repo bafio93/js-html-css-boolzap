@@ -174,6 +174,7 @@ body {
     width: 100%;
     background-image: url(https://png.pngtree.com/thumb_back/fh260/background/20190619/pngtree-aloha-vibes-dark-seamless-pattern-image_130750.jpg);
     padding: 40px 80px;
+    overflow-y: scroll;
 }
 
 /* Stilare l'input inferiore */
