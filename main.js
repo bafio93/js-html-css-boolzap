@@ -9,7 +9,7 @@ $(document).ready(function() {
         // Sezione del messaggio automatico di risposta del sistema.
         var clock = setTimeout(function(){
             var nuovo = $(".template .message.machine").clone();
-            nuovo.children("p:first-child").text("Messaggio ricevuto!");
+            nuovo.children("p:first-child").text("OK!");
             $(".message-container").append(nuovo);
         }, 1000)
     });
@@ -19,5 +19,25 @@ $(document).ready(function() {
     });
     $(".container-right input").blur(function() {
         $(".container-right i").removeClass("fa-paper-plane").addClass("fa-microphone");
+    });
+    // Aggiungo funzione di ricerca dei contatti in base alla ricerca nella barra di sinistra.
+    $(".container-left .searchbar input").change(function() {
+        // Seleziono l'input dell'utente e lo uniformo ad uppercase per un confronto corretto (JS è case-sensitive)
+        var ricerca = $(".container-left .searchbar input");
+        var testo = ricerca.val().toUpperCase();
+        // Vedo di ottenere ogni nome utente:
+        $(".container-left .conversation-container .user").each(function() {
+            // Stiamo ciclando i vari elementi .user: valutiamo se lo strong ==
+            var corrente = $(this).find("strong").text().toUpperCase();
+            if (!corrente.includes(testo)) {
+                $(this).hide();
+            }
+        })
+        // Resetto il valore del campo di ricerca!
+        $(".container-left input").val("");
+    })
+    // Necessario resettare il tutto se usciamo dalla barra di ricerca: uso un blur.
+    $(".container-left input").blur(function() {
+        $(".container-left .user").show();
     });
 })
