@@ -1,11 +1,15 @@
 $(document).ready(function() {
     $(".container-right input").change(function() {
         var testo = $(".container-right input").val();
-        $(".message-container").append("<div class='message user'></div>");
-        $(".message-container div:last-child").text(testo);
+        var nuovo = $(".template .message.user").clone();
+        nuovo.children("p:first-child").text(testo);
+        $(".message-container").append(nuovo);
         $(".container-right input").val("");
+        // Sezione del messaggio automatico di risposta.
         var clock = setTimeout(function(){
-            $(".message-container").append("<div class='message machine'>:)</div>")
+            var nuovo = $(".template .message.machine").clone();
+            nuovo.children("p:first-child").text("Messaggio ricevuto!");
+            $(".message-container").append(nuovo);
         }, 1000)
     })
 })
