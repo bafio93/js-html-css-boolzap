@@ -3,6 +3,7 @@ $(document).ready(function() {
         var testo = $(".container-right input").val();
         $(".message-container").append("<div class='message user'></div>");
         $(".message-container div:last-child").text(testo);
+        $(".container-right input").val("");
         var clock = setTimeout(function(){
             $(".message-container").append("<div class='message machine'>:)</div>")
         }, 1000)

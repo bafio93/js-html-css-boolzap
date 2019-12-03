@@ -118,6 +118,7 @@ body {
 .container-left .row.searchbar .row-middle {
     width: calc(100% - 50px);
     padding: 5px;
+    padding-left: 0;
 }
 
 .container-left .row.searchbar .row-middle input {
