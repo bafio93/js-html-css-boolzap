@@ -60,9 +60,20 @@ $(document).ready(function() {
     //     var nuovo = $(".template .message.machine").clone();
     //     nuovo.children("p.testo").text("Hai iniziato a chattare con: "+nome_corrente+"!");
     //     console.log("Hai iniziato a chattare con: "+nome_corrente+"!");
-    //     // $(nuova_chat).append(nuovo); // QUESTA MALEDETTA RIGA DISTRUGGE TUTTO!
+    //     $(nuova_chat).append(nuovo); // QUESTA MALEDETTA RIGA DISTRUGGE TUTTO!
     //     // In questo modo mi aspetto di trovare un rapporto 1:1 tra user e conversazioni generate.
     // });
+    //
+    // attr("data-felice","")
+    //
+    // .data("felice")
+
+    // IDEE PER MILESTONE 3:
+    // Corrispondeza di data- tra html e js
+    // Classe "da attivare"
+    // Append() arriva al div giusto?
+    // Più facile con classi! :D
+
     // // Evento click sugli user:
     // $(".container-left .conversation-container .user").click(function() {
     //     // Queste istruzioni salvano indice della conversazione cliccata + nome della persona.
@@ -73,9 +84,7 @@ $(document).ready(function() {
     //     var chat_selezionata = $(".template .chat .message-container:eq("+indice_corrente+")");
     //     $(chat_selezionata).removeClass("template");
     // });
-    // Necessario resettare il tutto se usciamo dalla barra di ricerca: uso un blur.
-    // (Nel caso volessi mettere la possibilità di switchare tra conversazioni, sopra il blur che segue.)
-    // Utilizzo il timeout per permettere di selezionare la conversazione cercata.
+
 
 
     // FINE MILESTONE 3
