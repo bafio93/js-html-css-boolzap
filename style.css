@@ -253,3 +253,18 @@ img {
     font-size: 75%;
     margin-top: 5px;
 }
+
+.message i {
+    color: rgb(177,177,177);
+    font-size: 15px;
+    float: right;
+}
+
+.message i:hover {
+    cursor: pointer;
+}
+
+.container-right .message-box .row-right {
+    text-align: center;
+    font-size: 25px;
+}
