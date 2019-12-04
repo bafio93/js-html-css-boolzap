@@ -34,6 +34,9 @@ $(document).ready(function() {
                 if (!corrente.includes(testo)) {
                     $(this).hide();
                 }
+                else {
+                    $(this).show();
+                }
             })
         }
         else {
