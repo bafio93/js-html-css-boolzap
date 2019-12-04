@@ -58,11 +58,12 @@ $(document).ready(function() {
     //     var nome_corrente = $(this).find("strong").text();
     //     $(".template .chat").append(nuova_chat);
     //     var nuovo = $(".template .message.machine").clone();
-    //     nuovo.children("p.testo").text("Hai iniziato a chattare con: "+nome_corrente);
-    //     $(nuova_chat).append(nuovo);
+    //     nuovo.children("p.testo").text("Hai iniziato a chattare con: "+nome_corrente+"!");
+    //     console.log("Hai iniziato a chattare con: "+nome_corrente+"!");
+    //     // $(nuova_chat).append(nuovo); // QUESTA MALEDETTA RIGA DISTRUGGE TUTTO!
     //     // In questo modo mi aspetto di trovare un rapporto 1:1 tra user e conversazioni generate.
     // });
-    // Evento click sugli user:
+    // // Evento click sugli user:
     // $(".container-left .conversation-container .user").click(function() {
     //     // Queste istruzioni salvano indice della conversazione cliccata + nome della persona.
     //     var indice_corrente = $(this).index();
@@ -75,6 +76,9 @@ $(document).ready(function() {
     // Necessario resettare il tutto se usciamo dalla barra di ricerca: uso un blur.
     // (Nel caso volessi mettere la possibilità di switchare tra conversazioni, sopra il blur che segue.)
     // Utilizzo il timeout per permettere di selezionare la conversazione cercata.
+
+
+    // FINE MILESTONE 3
 
     // SPOSTATO PARTE DELLA MILESTONE 2 QUI SOTTO
     $(".container-left input").blur(function() {
