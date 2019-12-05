@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    // MILESTONE 3
+    // MILESTONE 3 - SELEZIONE CONVERSAZIONI
     $(".conversation-container .user").click(function() {
         // Utilizzo classe "user-active" per vedere a quale utente sto messaggiando.
         // Rimuovo a tutti gli utenti l'active
@@ -22,9 +22,7 @@ $(document).ready(function() {
         $(".container-right .grey .row-middle strong").text(questo_nome);
         $(".container-right .grey .row-left img").attr("src",questa_img);
     })
-
-
-    // FINE MILESTONE 3
+    // FINE MILESTONE 3  - SELEZIONE CONVERSAZIONI
     $(".container-right input").change(function() {
         // Sezione della ricezione del messaggio scritto dall'utente.
         var testo = $(".container-right input").val();
@@ -69,6 +67,18 @@ $(document).ready(function() {
             $(".container-left .conversation-container .user").show();
         }
     });
+    // MILESTONE 3 - OPZIONI MESSAGGIO
+    // Intercetto click sulle opzioni
+    $(".container-right").on("click",".fa-angle-down",function(){
+        // Toggle class active
+        $(this).siblings(".options").toggleClass("user-active");
+    });
+    // Elimino il messaggio: deve funzionare sulla seconda opzione.
+    $(".container-right").on("click",".options p:last-child",function(){
+        // Elimino il messaggio corrispondente
+        $(this).closest(".message").remove();
+    });
+    // MILESTONE 3 - FINE OPZIONI MESSAGGIO
     // SPOSTATO PARTE DELLA MILESTONE 2 QUI SOTTO
     $(".container-left input").blur(function() {
         var clock = setTimeout(function(){
