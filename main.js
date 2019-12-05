@@ -1,13 +1,29 @@
 $(document).ready(function() {
     // MILESTONE 3
     $(".conversation-container .user").click(function() {
+        // Utilizzo classe "user-active" per vedere a quale utente sto messaggiando.
+        // Rimuovo a tutti gli utenti l'active
         $(".message-container").removeClass("user-active");
+        // Rimuovo a tutti i box-conversazioni l'active
         $(".conversation-container .user").removeClass("user-active");
+        // Aggiungo all'utente selezionato e al box-conversazioni corrispondente l'active
         var indice = $(this).index();
         $(this).addClass("user-active");
         $(".message-container").eq(indice).addClass("user-active");
-
+        // ATTENZIONE! CON QUESTO METODO SI SUPPONE DI AVERE LO STESSO NUMERO DI BOX-CONVERSAZIONI E DI UTENTI. EVENTUALMENTE SI POSSONO GENERARE DINAMICAMENTE UN NUMERO DI BOX = AL NUMERO DI UTENTI
+        //
+        // (POTREBBE ESSERE UN'AGGIUNTA)
+        //
+        // ----- CERCO E CAMBIO IMMAGINE E NOME DELL'UTENTE ATTIVO! -----
+        // Trovo immagini e nome
+        var questo_nome = $(this).find("strong").text();
+        var questa_img = $(this).find("img").attr("src");
+        // Setto immagine e nome
+        $(".container-right .grey .row-middle strong").text(questo_nome);
+        $(".container-right .grey .row-left img").attr("src",questa_img);
     })
+
+
     // FINE MILESTONE 3
     $(".container-right input").change(function() {
         // Sezione della ricezione del messaggio scritto dall'utente.
