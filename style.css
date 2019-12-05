@@ -268,3 +268,17 @@ img {
     text-align: center;
     font-size: 25px;
 }
+
+/* Gestione della comunicazione */
+
+.message-container {
+    display: none;
+}
+
+.message-container.user-active {
+    display: block;
+}
+
+.container-left .conversation-container .row.user.user-active {
+    background-color: teal;
+}

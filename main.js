@@ -1,16 +1,26 @@
 $(document).ready(function() {
+    // MILESTONE 3
+    $(".conversation-container .user").click(function() {
+        $(".message-container").removeClass("user-active");
+        $(".conversation-container .user").removeClass("user-active");
+        var indice = $(this).index();
+        $(this).addClass("user-active");
+        $(".message-container").eq(indice).addClass("user-active");
+
+    })
+    // FINE MILESTONE 3
     $(".container-right input").change(function() {
         // Sezione della ricezione del messaggio scritto dall'utente.
         var testo = $(".container-right input").val();
         var nuovo = $(".template .message.user").clone();
         nuovo.children("p.testo").text(testo);
-        $(".message-container").append(nuovo);
+        $(".message-container.user-active").append(nuovo);
         $(".container-right input").val("");
         // Sezione del messaggio automatico di risposta del sistema.
         var clock = setTimeout(function(){
             var nuovo = $(".template .message.machine").clone();
             nuovo.children("p.testo").text("OK!");
-            $(".message-container").append(nuovo);
+            $(".message-container.user-active").append(nuovo);
         }, 1000);
     });
     // Ora proviamo a cambiare icona da microphone a paper-plane con focus sull'elemento.
@@ -43,52 +53,6 @@ $(document).ready(function() {
             $(".container-left .conversation-container .user").show();
         }
     });
-
-    // MILESTONE 3
-
-
-    // Milestone 3: cambio conversazione attiva in base ad utente selezionato.
-
-    // Genero container per ogni conversazione, messi in template, attivabili solo con click sulla conversazione.
-
-    // QUESTA LA PARTE DI CODICE CHE FA CRASHARE LA PAGINA :(
-
-    // $(".container-left .conversation-container .user").each(function() {
-    //     var nuova_chat = $(".message-container").clone();
-    //     var nome_corrente = $(this).find("strong").text();
-    //     $(".template .chat").append(nuova_chat);
-    //     var nuovo = $(".template .message.machine").clone();
-    //     nuovo.children("p.testo").text("Hai iniziato a chattare con: "+nome_corrente+"!");
-    //     console.log("Hai iniziato a chattare con: "+nome_corrente+"!");
-    //     $(nuova_chat).append(nuovo); // QUESTA MALEDETTA RIGA DISTRUGGE TUTTO!
-    //     // In questo modo mi aspetto di trovare un rapporto 1:1 tra user e conversazioni generate.
-    // });
-    //
-    // attr("data-felice","")
-    //
-    // .data("felice")
-
-    // IDEE PER MILESTONE 3:
-    // Corrispondeza di data- tra html e js
-    // Classe "da attivare"
-    // Append() arriva al div giusto?
-    // Più facile con classi! :D
-
-    // // Evento click sugli user:
-    // $(".container-left .conversation-container .user").click(function() {
-    //     // Queste istruzioni salvano indice della conversazione cliccata + nome della persona.
-    //     var indice_corrente = $(this).index();
-    //     var nome_corrente = $(this).find("strong").text();
-    //     alert(indice_corrente);
-    //     // Abbiamo l'indice della conversazione selezionata, attiviamo la conversazione corrispondete nel template.
-    //     var chat_selezionata = $(".template .chat .message-container:eq("+indice_corrente+")");
-    //     $(chat_selezionata).removeClass("template");
-    // });
-
-
-
-    // FINE MILESTONE 3
-
     // SPOSTATO PARTE DELLA MILESTONE 2 QUI SOTTO
     $(".container-left input").blur(function() {
         var clock = setTimeout(function(){
