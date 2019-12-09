@@ -23,20 +23,24 @@ $(document).ready(function() {
         $(".container-right .grey .row-left img").attr("src",questa_img);
     })
     // FINE MILESTONE 3  - SELEZIONE CONVERSAZIONI
-    $(".container-right input").change(function() {
-        // Sezione della ricezione del messaggio scritto dall'utente.
-        var testo = $(".container-right input").val();
-        var nuovo = $(".template .message.user").clone();
-        nuovo.children("p.testo").text(testo);
-        $(".message-container.user-active").append(nuovo);
-        $(".container-right input").val("");
-        // Sezione del messaggio automatico di risposta del sistema.
-        var clock = setTimeout(function(){
-            var nuovo = $(".template .message.machine").clone();
-            nuovo.children("p.testo").text("OK!");
-            $(".message-container.user-active").append(nuovo);
-        }, 1000);
-    });
+
+
+    // $(".container-right input").change(function() {
+    //     // Sezione della ricezione del messaggio scritto dall'utente.
+    //     var testo = $(".container-right input").val();
+    //     var nuovo = $(".template .message.user").clone();
+    //     nuovo.children("p.testo").text(testo);
+    //     $(".message-container.user-active").append(nuovo);
+    //     $(".container-right input").val("");
+    //     // Sezione del messaggio automatico di risposta del sistema.
+    //     var clock = setTimeout(function(){
+    //         var nuovo = $(".template .message.machine").clone();
+    //         nuovo.children("p.testo").text("OK!");
+    //         $(".message-container.user-active").append(nuovo);
+    //     }, 1000);
+    // });
+
+
     // Ora proviamo a cambiare icona da microphone a paper-plane con focus sull'elemento.
     $(".container-right .message-box input").focus(function() {
         $(".container-right .message-box .row-right i").removeClass("fa-microphone").addClass("fa-paper-plane");
@@ -87,4 +91,30 @@ $(document).ready(function() {
             $(".container-left input").val("");
         }, 1500)
     });
+
+    // INIZIO APPENDICE HANDLEBARS
+    $(".container-right input").change(function() {
+        var template_html = $('#template-messaggio').html();
+        var template_function = Handlebars.compile(template_html);
+        var campo_messaggio = $(".container-right input").val();
+        // console.log(campo_messaggio);
+        var variabili = {
+            "messaggio": campo_messaggio ,
+            'classe': 'user'
+        };
+        var html_finale = template_function(variabili);
+        $(".message-container.user-active").append(html_finale);
+        $(".container-right input").val("");
+        // Sezione del messaggio automatico di risposta del sistema.
+        var clock = setTimeout(function(){
+            variabili2 = {
+                "messaggio": "spaventoso" ,
+                'classe': 'machine'
+            };
+            var html_finale2 = template_function(variabili2);
+            $(".message-container.user-active").append(html_finale2);
+        }, 1000);
+    });
+    // FINE APPENDICE HANDLEBARS
+
 })

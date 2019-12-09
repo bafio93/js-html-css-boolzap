@@ -8,6 +8,8 @@
         <title>Boolzap.baf</title>
         <script src="https://kit.fontawesome.com/d9af4a4df9.js" crossorigin="anonymous"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <!-- Include Handlebars from a CDN -->
+        <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
         <script type="text/javascript" src="main.js"></script>
     </head>
     <body>
@@ -230,5 +232,22 @@
                 <p class="time">17:00</p>
             </div>
         </div>
+
+        <!-- INIZIO TEMPLATE HANDLEBARS -->
+
+        <script id="template-messaggio" type="text/x-handlebars-template">
+            <div class="message {{ classe }}">
+                <i class="fas fa-angle-down"></i>
+                <div class="options">
+                    <p>Opzioni del messaggio</p>
+                    <p>Cancella il messaggio</p>
+                </div>
+                <p class="testo">{{ messaggio }}</p>
+                <p class="time">17:00</p>
+            </div>
+        </script>
+
+        <!-- FINE TEMPLATE HANDLEBARS -->
+
     </body>
 </html>
